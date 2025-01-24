@@ -1,0 +1,51 @@
+#!/usr/bin/env node
+import app from '../app.js'
+import {db} from '../db/db.js';
+const port = process.env.PORT || 3001;
+let server;
+
+(async () => {
+  try {
+    await db.connect('520Personal');
+  } catch (e) {
+    console.error('could not connect');
+    console.dir(e);
+    process.exit();
+  }
+  const songCount = await db.countItemInCollection('songs')
+  const countryCount = await db.countItemInCollection('countries')
+  const artistCount = await db.countItemInCollection('artists')
+  if (
+    songCount > 0 && 
+    countryCount > 0 && 
+    artistCount > 0
+  ) {
+    server = app.listen(port, () => {
+      console.log(`Server listening on port ${port}!`);
+    });
+
+   // taken from the Assignment spec: Unix 
+   process.on('SIGTERM', () => {
+    console.debug('SIGTERM signal received: closing HTTP server');
+    server.close(() => {
+      console.debug('HTTP server closed');
+      db.close();
+      process.exit(0);
+    });
+    });
+    // Graceful shutdown on SIGINT (Ctrl+C)
+
+    process.on('SIGINT', () => {
+      console.debug('SIGINT signal received: closing HTTP server');
+      server.close(() => {
+        console.debug('HTTP server closed ');
+        db.close();
+        process.exit(0);
+      });
+    });
+
+  } else {
+    console.error('one of the collection in the database is empty')
+    process.exit(1);
+  }
+})();

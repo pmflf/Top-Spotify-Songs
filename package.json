@@ -1,0 +1,17 @@
+{
+  "name": "520-project-hoang-sobh-qian",
+  "version": "1.0.0",
+  "description": "To make it easy for you to get started with GitLab, here's a list of recommended next steps.",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd server && node bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client && npm install && npm run build && cd ../server && npm install"
+  },
+  "author": "Yun Chen Qian, Danny Hoang, Ahmed Sobh",
+  "license": "ISC",
+  "dependencies": {
+    "520-project-hoang-sobh-qian": "file:",
+    "memory-cache": "^0.2.0"
+  }
+}

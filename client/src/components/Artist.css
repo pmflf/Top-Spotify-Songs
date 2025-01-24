@@ -1,0 +1,26 @@
+.artist-box {
+  height: fit-content;
+  padding: 10px;
+  border: .5px solid #ccc;
+  background-color: #fff;
+  font-size: 1rem;
+}
+
+.artist-box:hover {
+  border:1px solid #757777;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.artist-box:focus {
+  outline: none; 
+  border-color: #c8c8c8; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.artist-box p{
+  text-align: left;
+}
+
+.songArtistName{
+  color: rgb(129, 126, 126);
+  }

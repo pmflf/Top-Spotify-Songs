@@ -1,0 +1,184 @@
+
+.leaflet-container {
+  height: 98%;
+  flex: 3;
+}
+*{
+  font-family: 'Arial', sans-serif; 
+}
+
+.ui-container {
+  max-height: 85%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex:6;
+  border: 1px solid black;
+  background-color: whitesmoke;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.map-container { 
+  margin-top: 10px;
+  flex: 4;
+  width: 100%;
+  height: 95%; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #AAD3DF;
+  border: solid black 2px;
+}
+.map-container .leaflet-container {
+  height: 100%;       
+  border-radius: inherit;
+}
+
+@media (orientation: portrait) {
+  .ui-container {
+    flex-direction: column;
+  }
+  .leaflet-container {
+    width: 100%;
+  }
+}
+
+#artist-info {
+  height: 100%;
+
+}
+
+.page-container{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+
+.above-fold{
+  flex: 0 0 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+.below-fold{
+  background-color: #f4f4f9;
+  padding: 2rem;
+  margin: 10px;
+  height: 60vh;
+  margin-top: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.song-list{
+  height:100%
+}
+
+.song-list h3{
+  text-align: left;
+  font-size: 2.5rem;
+  border: solid black 1px;
+  background: white;
+  background-color: #ffffff;
+  padding: 16px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  font-weight: bold; 
+  color: #222;
+
+}
+
+.song-list h4{
+  margin-top: 2%;
+  margin-bottom: 2%;
+  text-align: left;
+  font-size: 1.8em;
+  color: #333;
+
+}
+.song-list ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.2em;
+  text-align: left;
+  max-height: 60%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+ 
+}
+
+.song-list li {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;   
+  color: #555;           
+  font-family: 'Georgia', serif; 
+}
+
+.song-list li div:first-child {
+  text-align: left;
+  width: 40%;
+}
+
+.song-list li div:last-child {
+  text-align: right;           
+}
+
+.error{
+  color: red;
+}
+
+@media screen and (max-width: 768px) {
+ 
+  .below-fold {
+    height: 40vh;  
+    padding: 1rem; 
+  }
+  .song-list h4 {
+    margin-top: 1%;      
+    margin-bottom: 1%;  
+    text-align: left;
+    font-size: 1.4em;    
+    color: #333;
+  }
+  .song-list h3 {
+    text-align: left;
+    font-size: 1.8rem;      
+    border: solid black 1px;
+    background-color: #ffffff;
+    padding: 12px;          
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    font-weight: bold;
+    color: #222;
+  }
+  
+  
+  .song-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1em;      
+    text-align: left;
+    max-height: 60%;     
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  
+  
+  .song-list li {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;     
+    font-family: 'Georgia', serif;
+    font-size: 1.1em;    
+  
+ 
+  .song-list li:not(:last-child) {
+    border-bottom: 1px solid #ddd;  
+  }
+}
+}
