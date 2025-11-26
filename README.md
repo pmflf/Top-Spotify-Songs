@@ -1,6 +1,6 @@
 # 520-Project-Hoang-Sobh-Qian
 ## Notice
-the seeding will not work because the data was too large to upload on GitHug Repo
+the seeding will not work because the data was too large to upload on GitHub Repo
 ## Description
 A School project where we write a full-stack Mongo Express React Node (MERN) application with a focus on the visualization of a large dataset, as well as some web performance considerations. We want to showcase a map where there we can click on countries and see the artists that are from those countries, then click on any of the artist to show their popular songs in 2024.
 ![alt text](images/image.png)
